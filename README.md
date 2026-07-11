@@ -2,14 +2,13 @@
 
 A small React + TypeScript app for visualizing real-time task scheduling, built alongside the *Embedded Operating Systems* course at UniVR.
 
-Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and watch them get scheduled tick-by-tick under **Rate Monotonic** or **Earliest Deadline First**.
+Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and watch them get scheduled tick-by-tick under some algorithm.
 
 ## Features
 
 - **Task manager** — add/remove tasks with period, CPU time, arrival time and deadline
 - **Scheduler simulation** — tick-by-tick trace over one hyperperiod, with proper periodic job releases (each task re-runs every period, not just once)
-- **Utilization factor** — U = ΣCᵢ/Tᵢ, checked against the Liu & Layland bound (RM) or U ≤ 1 (EDF)
-- **Worst-case response time** — classical fixed-priority response-time analysis for RM, observed worst response time from simulation for EDF
+- **Utilization factor** — U = ΣCᵢ/Tᵢ, checked against the Liu & Layland bound
 - **Schedulability check** — flags missed deadlines directly in the simulated trace
 
 ## Tech stack
@@ -18,11 +17,16 @@ Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and w
 - react-router
 
 ## Getting started
-
+If you want local acces:
+- clone the repo
+- install react
+- run command below
 ```bash
 npm install
 npm run dev
 ```
+
+for web access (click here)(https://github.com/MattiaSandrini/RTOS_scheduler/tree/react) (currently not avaiable)
 
 ## Project structure
 
