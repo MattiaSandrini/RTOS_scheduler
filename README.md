@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-for web access (click here)(https://github.com/MattiaSandrini/RTOS_scheduler/tree/react) (currently not avaiable)
+for web access (click here)[https://github.com/MattiaSandrini/RTOS_scheduler/tree/react] (currently not avaiable)
 
 ## Project structure
 
