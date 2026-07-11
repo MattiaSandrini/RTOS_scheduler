@@ -17,16 +17,15 @@ Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and w
 - react-router
 
 ## Getting started
-If you want local acces:
-- clone the repo
-- install react
-- run command below
+### local acces:
+you need to clone the repo, install react and execute command below
 ```bash
 npm install
 npm run dev
 ```
 
-for web access [click here](https://github.com/MattiaSandrini/RTOS_scheduler/tree/react) (currently not avaiable)
+### web access
+[click here](https://github.com/MattiaSandrini/RTOS_scheduler/tree/react) (currently not avaiable)
 
 ## Project structure
 
