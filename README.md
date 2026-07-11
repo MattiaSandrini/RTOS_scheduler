@@ -1,41 +1,40 @@
-# RTOS Scheduler Simulator
+# RTOS Scheduler
 
-An interactive, web-based simulator for visualizing Real-Time Operating System (RTOS) scheduling algorithms. This tool allows you to define tasks with specific computation times, arrivals, periods, and deadlines, and generates a dynamic Gantt chart showing how different algorithms schedule them.
+A small React + TypeScript app for visualizing real-time task scheduling, built alongside the *Embedded Operating Systems* course at UniVR.
 
-## 🚀 Features
+Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and watch them get scheduled tick-by-tick under **Rate Monotonic** or **Earliest Deadline First**.
 
-* **Multiple Algorithms**: Supports Earliest Deadline First (EDF), Rate Monotonic (RM), and First Come First Serve (FCFS).
-* **Periodic & Aperiodic Tasks**: Mix and match continuous repeating tasks with one-off tasks.
-* **Absolute vs Relative Deadlines**: Automatically handles relative deadlines for periodic tasks and absolute deadlines for aperiodic ones.
-* **Interactive Visualizations**: Built with Plotly.js for hoverable, detailed Gantt charts.
-* **Visual Indicators**: Clearly highlights task arrivals (↓), deadlines (↑), completions (⚫), and late executions (striped red).
-* **Client-Side Only**: Runs entirely in your browser. No backend or server setup required.
+## Features
 
-## 🛠️ Getting Started
-### 
-1. Visit https://rtosscheduler.sandrini.cc/
-2. Add your tasks using the sidebar form (T1 and T2 are provided as default examples).
-3. Select your desired scheduling algorithm from the dropdown menu.
-4. Click **▶ Run Simulation** to generate the Gantt chart.
+- **Task manager** — add/remove tasks with period, CPU time, arrival time and deadline
+- **Scheduler simulation** — tick-by-tick trace over one hyperperiod, with proper periodic job releases (each task re-runs every period, not just once)
+- **Utilization factor** — U = ΣCᵢ/Tᵢ, checked against the Liu & Layland bound (RM) or U ≤ 1 (EDF)
+- **Worst-case response time** — classical fixed-priority response-time analysis for RM, observed worst response time from simulation for EDF
+- **Schedulability check** — flags missed deadlines directly in the simulated trace
 
-## 🧠 Supported Algorithms
+## Tech stack
 
-* **EDF (Earliest Deadline First)**: A dynamic priority algorithm. The scheduler always chooses the ready task with the closest absolute deadline. Preemptive.
-* **RM (Rate Monotonic)**: A static priority algorithm. Tasks with shorter periods are assigned higher priority. It is mathematically optimal for static periodic task scheduling. Preemptive.
-* **FCFS (First Come First Serve)**: A non-preemptive algorithm. The scheduler executes tasks strictly in the exact order they arrive, ignoring deadlines and periods.
+- React + TypeScript
+- react-router
 
-## ⚠️ Limitations & Assumptions
+## Getting started
 
-* **Zero Overhead**: Context switching and scheduling computation times are assumed to be zero.
-* **Simulation Horizon**: The simulation calculates exactly 1 Hyperperiod (the Least Common Multiple of all periodic tasks) and stops. To prevent browser freezing on complex inputs, the timeline is strictly capped at `200` ticks.
-* **Defaults**: If a deadline is left blank for a periodic task, the simulation automatically assumes the relative deadline is equal to its period.
+```bash
+npm install
+npm run dev
+```
 
-## 💻 Tech Stack
+## Project structure
 
-* **HTML5 / CSS3**: Layout and styling.
-* **Vanilla JavaScript (ES6+)**: Simulation engine and logic.
-* **[Plotly.js](https://plotly.com/javascript/)**: Data visualization and Gantt chart rendering.
+```
+App.tsx           # app shell / layout
+menu.tsx          # top navigation bar
+manageTask.tsx     # task table + add/remove form
+scheduler.tsx      # algorithm picker, trace, utilization 
+algorithms.tsx     # scheduling simulation, utilization 
+```
 
-## 📄 License
+## Roadmap
 
-This project is open-source and available under the MIT License.
+- Aperiodic-serving policies (polling, deferrable, background server, total bandwidth server)
+- Theory page with algorithm explanations
