@@ -17,7 +17,7 @@ Add periodic or aperiodic tasks (period, CPU time, arrival time, deadline) and w
 - react-router
 
 ## Getting started
-### local acces:
+### local access
 you need to clone the repo, install react and execute command below
 ```bash
 npm install
