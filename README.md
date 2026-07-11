@@ -30,8 +30,8 @@ npm run dev
 App.tsx           # app shell / layout
 menu.tsx          # top navigation bar
 manageTask.tsx     # task table + add/remove form
-scheduler.tsx      # algorithm picker, trace, utilization & WCRT panels
-algorithms.tsx     # scheduling simulation, utilization and WCRT math
+scheduler.tsx      # algorithm picker, trace, utilization 
+algorithms.tsx     # scheduling simulation, utilization
 ```
 
 ## Roadmap
