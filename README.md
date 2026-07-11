@@ -38,3 +38,4 @@ algorithms.tsx     # scheduling simulation, utilization
 
 - Aperiodic-serving policies (polling, deferrable, background server, total bandwidth server)
 - Theory page with algorithm explanations
+- web link to acess without installing react and clone repo
