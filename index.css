@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+:root {
+  /* palette — dark instrument panel + amber phosphor accent */
+  --bg-void: #0b0f14;
+  --bg-panel: #131a22;
+  --bg-panel-raised: #1a2330;
+  --bg-inset: #0e141c;
+  --border-line: #263243;
+  --border-line-soft: #1c2733;
+
+  --text-bright: #eef2f6;
+  --text-dim: #8996a8;
+  --text-faint: #566372;
+
+  --amber: #ffb454;
+  --amber-soft: rgba(255, 180, 84, 0.14);
+  --amber-line: rgba(255, 180, 84, 0.35);
+  --teal: #5fd4c4;
+  --teal-soft: rgba(95, 212, 196, 0.14);
+  --danger: #ff6b6b;
+  --danger-soft: rgba(255, 107, 107, 0.12);
+
+  --font-display: "IBM Plex Mono", "Courier New", monospace;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-panel:
+    0 1px 0 rgba(255, 255, 255, 0.02) inset,
+    0 12px 24px -16px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-void);
+  background-image:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(255, 180, 84, 0.05),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(95, 212, 196, 0.04),
+      transparent 45%
+    );
+  background-attachment: fixed;
+  color: var(--text-bright);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+  color: var(--text-bright);
+}
+
+p {
+  color: var(--text-dim);
+  margin: 0 0 0.75em;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+button {
+  font-family: var(--font-display);
+  cursor: pointer;
+}
+
+/* eyebrow / code-comment style heading prefix — this is a scheduling tool,
+   so headings read like annotated source */
+.eyebrow-heading {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.eyebrow-heading::before {
+  content: "// ";
+  color: var(--amber);
+  position: absolute;
+  left: 0;
+}
+
+::selection {
+  background: var(--amber-soft);
+  color: var(--text-bright);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-line);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-line);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
