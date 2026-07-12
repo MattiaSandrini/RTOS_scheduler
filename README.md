@@ -25,7 +25,8 @@ npm run dev
 ```
 
 ### web access
-[click here](https://github.com/MattiaSandrini/RTOS_scheduler/tree/react) (currently not avaiable)
+[click here](https://rtos-scheduler.vercel.app/)
+
 
 ## Project structure
 
